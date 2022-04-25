@@ -1,66 +1,205 @@
-<SlidePage next="page-2">
+<SlidePage>
     
 <Cover>
 
-# NextJS MDX Deck
+# Next.js
 
-Create presentations using Next & React & MDX.
+Introduction
 
 </Cover>
 
 ---
 
-1. Clone this project.
-1. Write some MDX.
-1. Export as [static app](https://nextjs.org/docs/advanced-features/static-html-export)
-1. ???
-1. Profit as a speaker 💰💰💰
+# Sponsors
+
+## [La Mêlée](https://www.lamelee.com/)
+
+## [Shotgun](https://pro.shotgun.live/fr)
 
 <SpeakerNotes>
-    
-Private notes here.
 
-You can write an extremely long note and it'll still display inside of the presenter mode.
-
-# Even Markdown!
-
-- Just
-- do
-- it
+- https://gatsby-prez.netlify.app/4
 
 </SpeakerNotes>
 
 ---
 
-> Inscrutable icons litter the face of the devices even though the research
-> community has long demonstrated that people cannot remember the meaning of
-> more than a small number of icons […] Who can remember what each icon
-> means? Not me.
->
-> <cite>Don Norman</cite>
+# Next.js c'est quoi ?
+
+Gatsby et Next sont des _frameworks React_ <br />
+permettant de créer des applications Web rapides et modernes, <br />
+via une stack moderne qui fonctionne « out of the box »
+
+<br />
+
+→ transpilation (ESNext/TypeScript)
+
+→ qualité du code (Eslint/Prettier)
+
+→ code splitting & minification
+
+→ APIs serverless (cloud functions)
 
 ---
 
-# 🤫
-
----
+# Gatsby
 
 <Steps>
-  <Step>Something</Step>
-  <Step>happens</Step>
-  <Step>one</Step>
-  <Step>by</Step>
-  <Step>one</Step>
+<Step>
+
+## Lacunes passées :
+
+→ régénération complète à chaque changement
+
+→ data store client en GraphQL
+
+→ TypeScript non intégré par défaut
+
+</Step>
+<Step>
+
+## Maintenant :
+
+→ Incremental builds 👍
+
+→ GraphQL 👎
+
+→ TypeScript peu intégré 👎
+
+</Step>
 </Steps>
 
 ---
 
-## Slides are written in MDX!
+# Next.js vs Gatsby 💥
 
-And code is highlighted using `react-syntax-highlighter`.
+<br />
 
-```js
-const variable = someFunction();
-```
+[<img src="/images/trends.png" width="75%" />](https://www.npmtrends.com/gatsby-vs-next)
+
+<SpeakerNotes>
+
+- Plus simple, moderne, TypeScript
+- Investissements Vercel
+
+</SpeakerNotes>
+
+---
+
+
+# Next.js
+
+→ Initialement orienté SSR
+
+→ Développement du statique <br />
+  ([automatique](https://nextjs.org/docs/advanced-features/automatic-static-optimization) ou [manuel](https://nextjs.org/docs/advanced-features/static-html-export))
+
+<SpeakerNotes>
+
+- SSR : getInitialProps => getServerSideProps
+- Statique : getInitalProps => getStaticProps / getStaticPaths
+
+</SpeakerNotes>
+
+---
+
+# CDN Vercel (ou Netlify)
+
+[statique intelligent](https://nextjs.org/docs/api-reference/edge-runtime)
+
+→ **I**ncremental **S**tatic **R**egeneration <br />
+  ([automatique](https://nextjs.org/docs/basic-features/data-fetching/incremental-static-regeneration) ou [manuel](https://nextjs.org/docs/basic-features/data-fetching/incremental-static-regeneration#on-demand-revalidation-beta))
+
+→ [Fallback](https://nextjs.org/docs/api-reference/data-fetching/get-static-paths#fallback-blocking)
+
+<SpeakerNotes>
+
+- SWR cache pour SSR
+
+</SpeakerNotes>
+
+---
+
+# Bonus Vercel 🎁
+
+→ [images](https://nextjs.org/docs/basic-features/image-optimization) (composant React et API)
+
+→ [next.config.js](https://nextjs.org/docs/api-reference/next.config.js/introduction) ou [Middleware](https://nextjs.org/docs/advanced-features/middleware)
+
+<SpeakerNotes>
+
+Use cases Middleware:
+- Redirect based on cookies, langs, etc
+- Set HTTP headers conditionally (cache etc)
+
+</SpeakerNotes>
+
+---
+
+# Limites
+
+## Statique
+
+→ Même contenu pour tous (pas de section utilisateur)
+
+## SSR
+
+→ Cache (quotas, sécurité)
+
+<SpeakerNotes>
+
+- user section = client-side
+
+</SpeakerNotes>
+
+---
+
+# Coûts 💰
+
+Tier gratuit généreux, mais attention…
+
+→ Bande passange
+
+→ API images = 1 000 sources par mois
+
+---
+
+# SSR + cache vs SSG + ISR
+
+<Steps>
+
+<Step>
+😱 🤯
+</Step>
+
+<Step>
+
+→ Sur Vercel, peu de différence car serverless
+
+</Step>
+
+<Step>
+→ Moins de requêtes si SSG avec <em>revalidate</em> à la demande
+</Step>
+<Step>
+<small>(pareil si durée de cache en SSR = durée du revalidate en SSG/ISR)</small>
+</Step>
+
+<Step>
+
+→ Données calculées dynamiquement => SSR + SWR
+</Step>
+
+<Step>
+→ Données statiques (CMS) => SSG + ISR
+</Step>
+
+</Steps>
+
+--- 
+
+# Merci !
+
+# 🍕 🍺 
 
 </SlidePage>
