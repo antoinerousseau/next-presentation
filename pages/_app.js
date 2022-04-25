@@ -35,9 +35,9 @@ export default function App({ Component, pageProps }) {
                   </Head>
                   <Header
                     name={siteConfig.name}
+                    url={siteConfig.url}
                     title={siteConfig.title}
                     date={siteConfig.date}
-                    url={siteConfig.author.url}
                   />
                   <Component {...pageProps} />
                 </TransitionPage>

@@ -1,10 +1,8 @@
 export const siteConfig = {
-  name: `@whoisryosuke`,
-  title: `NextJS MDX Deck`,
-  date: `April 22, 2020`,
-  author: {
-    url: `https://twitter.com/whoisryosuke`,
-  },
+  name: `React Toulouse #8`,
+  url: `https://react-toulouse.js.org/`,
+  title: `Next.js`,
+  date: `25 avril 2022`,
 }
 
 export default siteConfig
